@@ -7,37 +7,328 @@
  Jedeme retro cernobile, dnes barvy nepotrebujeme.
 */
 
-
 body {
     margin: 0;
+    margin: 0 auto;
     padding: 0;
     background-color: #f5f5f5;
     font-family: 'Merriweather', serif;
     font-size: 16px;
     line-height: 1.6;
+    width: 100%;
 }
 
 
 /* HLAVICKA */
 
-.titulek {
-    font-family: 'Raleway', serif;
+header {
+    background-image: url(images/island-hlavicka.jpg);
+    background-position: center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 15px 25px 25px 25px;
 }
 
+.titulek {
+    font-family: 'Raleway', serif;
+    font-size: 3.2rem;
+    margin: 0;
+}
+
+.autor {
+    font-style: italic;
+    opacity: 0.7;
+    padding-top: 40px;
+    line-height: 4em;
+}
+
+.autor::before {
+    content:'';
+    display:block;
+    width: 20%; 
+    height:100%;
+    border-bottom: 2px solid white;
+    margin: 0 auto;
+}
 
 /* MENU */
 
+.menu {
+    margin: 0;
+    padding: 30px 0 40px 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-size: 0.9rem;
+}
+
+.menu li {
+    list-style: none;
+    border-bottom: 1px solid #e6e6e6;
+    padding: 8px 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #a0a0a0;
+    padding: 10px;
+}
 
 
 
 /* OBSAH */
 
+h2 {
+    padding-top: 15px;
+    font-family: sans-serif;
+    line-height: 2.5em;
+}
 
+h2::after {
+    content:'';
+    display:block;
+    width:30%; 
+    height:100%;
+    border-bottom:5px solid #5183f0;
+    transform: translate(-60px);
+}
 
+.uvod,
+.proc,
+.covidet,
+.photogalery h2 {
+    padding: 0px 20px;
+}
+
+img {
+    width: 100%;
+    padding-top: 40px;
+}
+
+.popisek {
+    text-align: center;
+    color: grey;
+    font-family: sans-serif;
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+.popisek a {
+    color: grey;
+}
 
 /* FOTOGALERIE */
 
+.pictures  {
+    padding-top: 20px;
+}
 
+.foto img {
+   width: 100%; 
+   padding-top: 20px;
+}
 
+.foto .popisek {
+    font-weight: 700;
+    font-size: 0.9rem;
+    line-height: 1.2;
+    padding-top: 5px;
+}
+
+.foto .popisek-copy {
+    font-weight: normal;
+    font-size: 0.8rem;
+}
 
 /* PATICKA */
+
+.footer {
+    color: grey;
+    font-weight: 300;
+    font-size: 0.8rem;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.footer a {
+    color: grey;
+
+}
+
+@media (min-width: 500px) {
+    .titulek {
+        font-size: 4rem;
+    }
+
+    .menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+
+    .menu li {
+        padding: 5px;
+        border: 1px solid #e6e6e6;
+        border-right: none;
+    }
+
+    .menu li:last-child {
+        border-right: 1px solid #e6e6e6;
+    }
+
+    h2::after {
+        width: 20%;
+    }
+
+    .subphoto {
+        position: relative;
+    }
+
+    .subphoto .popisek {
+        color: white;
+        position: absolute;  
+        bottom: 15px;
+        right: 15px;
+        padding: 0;
+    }
+
+    .subphoto a {
+        color: white;
+        text-decoration: underline;
+    }
+
+    .pictures {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .foto {
+        width: 50%;
+        position: relative;
+        overflow: hidden; 
+    }
+
+    .foto img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        padding: 0;
+    }
+
+    .foto .popisek {
+        color: white;
+        background-color: #00000066;
+        text-align: center;
+        padding: 5px 0;
+        position: absolute;
+        width: 100%;
+        transition: transform 500ms ease 0s;
+    }
+
+    .foto .nazev {
+        font-weight: bold;
+    }
+
+    .foto .copyright {
+        font-size: 0.8rem;
+    }
+
+    .foto a {
+        color: white;
+    }
+
+    .foto:hover .popisek {
+        transform: translate(0, -100%);
+    }
+
+    .foto:hover img {
+        transform: scale(1.15);
+    }
+
+    .foto img {
+        transition: transform 500ms;
+    }
+
+}
+
+    @media (min-width: 1000px) {
+
+        header {
+            padding: 25px 130px 50px 130px;
+            height: 380px;
+        }
+
+        .perex {
+            margin: 0 auto;
+            width: 850px;
+        }
+
+        .titulek {
+            font-size: 5rem;
+        }
+
+        .autor {
+            padding-top: 10px;
+        }
+
+        .obsah {
+            transform: translate(0, -25px);
+            top: 360px;
+            background: white;
+            width: 960px;
+            box-shadow: 0 4px 8px 0 #00000033; 
+            padding-top: 50px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            line-height: 2.5em;
+        }
+
+        .uvod,
+        .proc,
+        .covidet,
+        .photogalery h2 {
+            padding: 0 60px;
+        }
+
+        .menu {
+            display: block;
+            padding: 10px 50px;
+            text-align: left;
+            float: left;
+        }
+
+        .menu li {
+            border: 0;
+            border-bottom: 1px solid #e6e6e6;
+        }
+
+        .menu li:last-child {
+            border-right: none;
+        }
+
+        .uvod {
+            padding-left: 300px;
+        }
+
+        .proc {
+            padding-right: 150px;
+        }
+
+        .covidet {
+            padding-left: 150px;
+        }
+
+        .foto {
+            width: 33.333%;
+        }
+
+        footer {
+            padding: 0 33% 33% 0;
+            margin-left: 33%;
+        }
+    }
